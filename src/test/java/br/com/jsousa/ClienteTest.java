@@ -2,17 +2,20 @@ package br.com.jsousa;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
+
+import java.util.List;
 
 import org.junit.Test;
 
 import br.com.jsousa.dao.ClienteDAO;
-import br.com.jsousa.dao.IClienteDAO;
+import br.com.jsousa.dao.IGenericDAO;
 import br.com.jsousa.domain.Cliente;
 
 public class ClienteTest {
 
-	private IClienteDAO clienteDAO;
+	private IGenericDAO<Cliente> clienteDAO;
 	
 	@Test
 	public void CadastrarTest() throws Exception {
@@ -30,7 +33,7 @@ public class ClienteTest {
 		assertEquals(cliente.getCodigo(), clienteBD.getCodigo());
 		assertEquals(cliente.getNome(), clienteBD.getNome());
 	
-		Integer qtdDel = dao.excluir(clienteBD);
+		Integer qtdDel = clienteDAO.excluir(clienteBD);
 		assertNotNull(qtdDel);
 	}
 	

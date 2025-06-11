@@ -10,7 +10,7 @@ import java.util.List;
 import br.com.jsousa.dao.generic.jdbc.ConnectionFactory;
 import br.com.jsousa.domain.Cliente;
 
-public class ClienteDAO implements IClienteDAO{
+public class ClienteDAO implements IGenericDAO<Cliente>{
 
 	@Override
 	public Integer cadastrar(Cliente cliente) throws Exception{
