@@ -21,8 +21,8 @@ public class ClienteTest {
 	public void CadastrarTest() throws Exception {
 		clienteDAO = new ClienteDAO();
 		Cliente cliente = new Cliente();
-		cliente.setCodigo("01");
-		cliente.setNome("Jovane");
+		cliente.setCodigo("10");
+		cliente.setNome("Jovane Sousa");
 		
 		Integer qtd = clienteDAO.cadastrar(cliente);
 		assertTrue(qtd == 1);
@@ -43,7 +43,7 @@ public class ClienteTest {
 		
 		Cliente cliente = new Cliente();
 		cliente.setCodigo("10");
-		cliente.setNome("Rodrigo Pires");
+		cliente.setNome("Jovane Sousa");
 		Integer countCad = clienteDAO.cadastrar(cliente);
 		assertTrue(countCad == 1);
 		
@@ -62,7 +62,7 @@ public class ClienteTest {
 		
 		Cliente cliente = new Cliente();
 		cliente.setCodigo("10");
-		cliente.setNome("Rodrigo Pires");
+		cliente.setNome("Jovane Sousa");
 		Integer countCad = clienteDAO.cadastrar(cliente);
 		assertTrue(countCad == 1);
 		
@@ -81,13 +81,13 @@ public class ClienteTest {
 		
 		Cliente cliente = new Cliente();
 		cliente.setCodigo("10");
-		cliente.setNome("Rodrigo Pires");
+		cliente.setNome("Jovane Sousa");
 		Integer countCad = clienteDAO.cadastrar(cliente);
 		assertTrue(countCad == 1);
 		
 		Cliente clientes = new Cliente();
 		clientes.setCodigo("20");
-		clientes.setNome("Teste");
+		clientes.setNome("Rodrido");
 		Integer countCad2 = clienteDAO.cadastrar(clientes);
 		assertTrue(countCad2 == 1);
 		
@@ -104,7 +104,6 @@ public class ClienteTest {
 		
 		list = clienteDAO.buscarTodos();
 		assertEquals(list.size(), 0);
-		
 	}
 	
 	@Test
@@ -113,7 +112,7 @@ public class ClienteTest {
 		
 		Cliente cliente = new Cliente();
 		cliente.setCodigo("10");
-		cliente.setNome("Rodrigo Pires");
+		cliente.setNome("Jovane Sousa");
 		Integer countCad = clienteDAO.cadastrar(cliente);
 		assertTrue(countCad == 1);
 		
@@ -123,7 +122,7 @@ public class ClienteTest {
 		assertEquals(cliente.getNome(), clienteBD.getNome());
 		
 		clienteBD.setCodigo("20");
-		clienteBD.setNome("Outro nome");
+		clienteBD.setNome("Jovane Maciel de Sousa");
 		Integer countUpdate = clienteDAO.atualizar(clienteBD);
 		assertTrue(countUpdate == 1);
 		

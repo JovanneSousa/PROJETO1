@@ -9,6 +9,7 @@ import java.util.List;
 
 import br.com.jsousa.dao.generic.jdbc.ConnectionFactory;
 import br.com.jsousa.domain.Cliente;
+import br.com.jsousa.domain.Produto;
 
 public class ClienteDAO implements IGenericDAO<Cliente>{
 
@@ -26,15 +27,11 @@ public class ClienteDAO implements IGenericDAO<Cliente>{
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		} finally {
-			if(stm != null && !stm.isClosed()) {
-				stm.close();
-			}
-			if (connection != null && !connection.isClosed()) {
-				closeConnection(connection, stm, null);
-			}
+			closeConnection(connection, stm, null);
 		}
 	}
 
+	
 	@Override
 	public Cliente consultar(String codigo) throws Exception {
 		Connection connection = null;

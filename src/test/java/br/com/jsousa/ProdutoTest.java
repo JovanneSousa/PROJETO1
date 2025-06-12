@@ -104,7 +104,6 @@ public class ProdutoTest {
 		
 		list = produtoDAO.buscarTodos();
 		assertEquals(list.size(), 0);
-		
 	}
 	
 	@Test
